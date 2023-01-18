@@ -1,14 +1,11 @@
 const refs = {
-    text: document.getElementById('text'),
     fontSizeControl: document.getElementById('font-size-control'),
+    text: document.getElementById('text'),
 };
 
-console.dir(refs.fontSizeControl);
-refs.fontSizeControl.addEventListener('change', () => {
-    console.log(refs.fontSizeControl.ariaLabel)
-});
+refs.fontSizeControl.setAttribute("value", refs.fontSizeControl.getAttribute("min"));
+refs.fontSizeControl.addEventListener('input', fontSizeController);
 
-function fontSizeControl() {
-
+function fontSizeController(e) {
+    refs.text.style.fontSize = `${e.target.value}px`;
 }
-
