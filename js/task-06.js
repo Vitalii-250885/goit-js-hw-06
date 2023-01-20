@@ -8,7 +8,7 @@ refs.input.addEventListener('input', onInputBlur);
 refs.input.addEventListener('blur', onInputBlur);
 
 function onInputBlur() {
-    if(refs.input.value.length >= inputDataLength){
+    if(refs.input.value.length === inputDataLength){
         refs.input.classList.remove('invalid');
         refs.input.classList.add('valid');
 
